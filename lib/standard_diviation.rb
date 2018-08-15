@@ -1,7 +1,7 @@
 # step 0
 array = [24, 30, 18, 20, 41]
 
-def standart_diviation(array)
+def standard_diviation(array)
 #step 1: sum of all the integers method
 sum_all_integers = sum_of_integers(array)
 
@@ -25,7 +25,7 @@ sum_square_numbers = square.sum
 standart = sum_square_numbers / length
 
 # step 8
-puts Math.sqrt(standart).round(2)
+ Math.sqrt(standart).round(2)
 end
 
 # step 1
@@ -65,5 +65,3 @@ def square_numbers(array)
   end
   square_number
 end
-
-standart_diviation(array)
