@@ -1,41 +1,69 @@
 # step 0
-ages = [24, 30, 18, 20, 41]
-# step 1
-sum_of_ages = 0
+array = [24, 30, 18, 20, 41]
 
-ages.each do |number|
-  sum_of_ages += number
+def standart_diviation(array)
+#step 1: sum of all the integers method
+sum_all_integers = sum_of_integers(array)
 
-end
-# step 2
-number_of_integers = ages.length
+#step 2: find the number of integer inside array
+length = arrays_length(array)
 
-# step 3
-average_number = (sum_of_ages.to_f / number_of_integers.to_f).round(2)
+#step 3: average number of all the elements in the array
+average = average_number(sum_all_integers, length)
 
+#step 4:subtract each integer in the index
+subtract = subtract_index(array, average)
 
-#step 4
-average_sub_integer = []
-
-ages.each do |index|
-  average_sub_integer << (index - average_number).round(2)
-
-end
-# step 5
-square_numbers = []
-
-average_sub_integer.each do |square|
-  square_numbers << (square ** 2).round(2)
-end
+#step 5: square each index value
+square = square_numbers(subtract)
 
  # step 6
-sum_square_numbers = square_numbers.sum
+sum_square_numbers = square.sum
 # puts sum_square_numbers
 
 # step 7
-standart = sum_square_numbers / number_of_integers
+standart = sum_square_numbers / length
 
 # step 8
-standart_diviation = Math.sqrt(standart).round(2)
+puts Math.sqrt(standart).round(2)
+end
 
-puts standart_diviation
+# step 1
+def sum_of_integers(array)
+  sum = 0
+  array.each do |number|
+    sum += number
+  end
+ sum
+end
+
+# step 2
+def arrays_length(array)
+  number_of_integers = array.length
+end
+
+# step 3
+def average_number(sum, length)
+   (sum.to_f / length.to_f).round(2)
+end
+
+#step 4
+def subtract_index(array, average)
+  average_sub_integer = []
+
+  array.each do |index|
+    average_sub_integer << (index - average).round(2)
+  end
+  average_sub_integer
+end
+
+# step 5
+def square_numbers(array)
+  square_number = []
+  array.each do |square|
+    square_number << (square ** 2).round(2)
+  end
+  square_number
+end
+
+standart_diviation(array)
